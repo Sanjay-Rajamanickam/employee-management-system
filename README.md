@@ -3,9 +3,17 @@
  1. This comprehensive system provides a robust and efficient platform for managing employee data and operations. 
  2. It leverages the strengths of React JS for a dynamic and user-friendly front-end and Spring Boot for a powerful and scalable back-end architecture.
  
-![Screenshot (90)](https://github.com/Ajiththeerthiya/Full-stack-Employee-Management-System-using-SpringBoot-and-React-Js-/assets/67873730/2dcf1f65-5f82-4ed8-8fb5-3c7f506dcd20)
-![Screenshot (89)](https://github.com/Ajiththeerthiya/Full-stack-Employee-Management-System-using-SpringBoot-and-React-Js-/assets/67873730/9abfa4c9-387b-4c07-902e-7dcc9c710e01)
-![Screenshot (91)](https://github.com/Ajiththeerthiya/Full-stack-Employee-Management-System-using-SpringBoot-and-React-Js-/assets/67873730/54228236-39ee-42e9-be6b-c6672d4e1dff)
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Home Page](https://github.com/Sanjay-Rajamanickam/employee-management-system/blob/main/ems-fullstack/Screenshot/Home.png?raw=true)
+
+### ➕ Add Employee Page
+![Add Employee Page](https://github.com/Sanjay-Rajamanickam/employee-management-system/blob/main/ems-fullstack/Screenshot/Add.png?raw=true)
+
+### ✏️ Update Employee Page
+![Update Employee Page](https://github.com/Sanjay-Rajamanickam/employee-management-system/blob/main/ems-fullstack/Screenshot/Update.png?raw=true)
+
 
  # Key Features:
    Employee Management:
