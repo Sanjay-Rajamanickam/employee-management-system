@@ -1,17 +1,13 @@
-import React from 'react'
-import '../style/header.css'
-
+import React from 'react';
 
 function Header() {
     return (
-        <>
-            <nav className='navbar bg-body-primary col'>
-                <div className="container">
-                    <a className="navbar-brand navi" target='_blank' href=''>Employee Management System</a>
-                </div>
-            </nav>
-        </>
-    )
+        <nav className="navbar navbar-dark bg-dark">
+            <div className="container">
+                <span className="navbar-brand mb-0 h1">Employee Management System</span>
+            </div>
+        </nav>
+    );
 }
 
-export default Header
+export default Header;

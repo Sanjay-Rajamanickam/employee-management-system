@@ -1,109 +1,96 @@
-import React, { useState } from 'react'
-import { savedEmployee, updateDataEmployee, editEmployee } from '../service/EmployeeService'
-import '../style/employeeform.css'
-import { useNavigate, useParams } from 'react-router-dom'
-import { useEffect } from 'react'
 
-function EmployeeComponent() {
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
-    const [email, setEmail] = useState('')
+import '../style/employeeform.css';
+import React, { useState, useEffect } from 'react';
+import { savedEmployee, updateDataEmployee, editEmployee } from '../service/EmployeeService';
+import { useNavigate, useParams } from 'react-router-dom';
 
-    const navigate = useNavigate()
-    const { id } = useParams()
+const EmployeeComponent = () => {
+    const [employee, setEmployee] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+    });
 
-
-    function pageTitle() {
-        if (id) {
-            return <h4 className='title'>Update Employees</h4>
-        } else {
-            return <h4 className='title'>Add Employees</h4>
-        }
-    }
+    const navigate = useNavigate();
+    const { id } = useParams();
 
     useEffect(() => {
         if (id) {
             editEmployee(id).then((response) => {
-                setFirstName(response.data.firstName);
-                setLastName(response.data.lastName);
-                setEmail(response.data.email);
-            })
+                setEmployee(response.data);
+            }).catch((error) => {
+                console.error(error);
+            });
         }
-    }, [id])
+    }, [id]);
 
-    function saveEmployee(e) {
-        e.preventDefault()
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setEmployee({ ...employee, [name]: value });
+    };
 
-        const employee = { firstName, lastName, email }
-        if (firstName === "" || lastName === "" || email === "") {
-            return;
-        }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
         if (id) {
-            updateDataEmployee(id, employee).then((response) => {
-                navigate('/')
-            }).catch(error => {
+            updateDataEmployee(id, employee).then(() => {
+                navigate('/employees');
+            }).catch((error) => {
                 console.error(error);
-            })
+            });
         } else {
-            savedEmployee(employee).then((response) => {
-            }).catch(error => {
+            savedEmployee(employee).then(() => {
+                navigate('/employees');
+            }).catch((error) => {
                 console.error(error);
-            })
-            navigate("/")
+            });
         }
-    }
+    };
 
     return (
-        <>
-            <div className='st-ba'>
-                <div className='container d-flex justify-content-center align-items-center '>
-                    <div className="text-center card card-top" >
-                        <div className='card-head'>
-                            {
-                                pageTitle()
-                            }
-                        </div>
-                        <div className="card-body">
-                            <form action="">
-                                <div className='form-group mb-3'>
-                                    <input
-                                        type="text"
-                                        placeholder='Enter FirstName'
-                                        value={firstName}
-                                        className='form-control'
-                                        onChange={(e) => setFirstName(e.target.value)}
-                                        id="validationCustom01"
-                                        required
-                                    />
-                                </div>
-                                <div className='form-group mb-3'>
-                                    <input
-                                        type="text"
-                                        placeholder='Enter LastName'
-                                        value={lastName}
-                                        className='form-control'
-                                        onChange={(e) => setLastName(e.target.value)}
-                                        required
-                                    />
-                                </div>
-                                <div className='form-group mb-3'>
-                                    <input
-                                        type="text"
-                                        placeholder='Enter Email'
-                                        value={email}
-                                        className='form-control'
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        required
-                                    />
-                                </div>
-                                <button className='btn btn-success' onClick={saveEmployee}>Save</button>
-                            </form>
-                        </div>
-                    </div>
+        <div className="employee-form-container">
+            <h2>{id ? 'Update Employee' : 'Add Employee'}</h2>
+            <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                    <label>First Name:</label>
+                    <input
+                        type="text"
+                        name="firstName"
+                        value={employee.firstName}
+                        onChange={handleChange}
+                        required
+                    />
                 </div>
-            </div>
-        </>
-    )
-}
 
-export default EmployeeComponent
+                <div className="form-group">
+                    <label>Last Name:</label>
+                    <input
+                        type="text"
+                        name="lastName"
+                        value={employee.lastName}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label>Email:</label>
+                    <input
+                        type="email"
+                        name="email"
+                        value={employee.email}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+
+                <button type="submit" className="btn-submit">
+                    {id ? 'Update' : 'Save'}
+                </button>
+            </form>
+        </div>
+    );
+};
+
+export default EmployeeComponent;
+
