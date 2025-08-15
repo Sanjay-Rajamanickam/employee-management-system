@@ -1,5 +1,10 @@
 # EMS Employee Management System with React JS and Spring Boot👨‍💻
 
+[![Made with React](https://img.shields.io/badge/Frontend-ReactJS-61DBFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Made with Spring Boot](https://img.shields.io/badge/Backend-Spring%20Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
+[![MySQL](https://img.shields.io/badge/Database-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+
  1. This comprehensive system provides a robust and efficient platform for managing employee data and operations. 
  2. It leverages the strengths of React JS for a dynamic and user-friendly front-end and Spring Boot for a powerful and scalable back-end architecture.
  
