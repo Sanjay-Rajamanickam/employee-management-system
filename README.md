@@ -3,15 +3,15 @@
  1. This comprehensive system provides a robust and efficient platform for managing employee data and operations. 
  2. It leverages the strengths of React JS for a dynamic and user-friendly front-end and Spring Boot for a powerful and scalable back-end architecture.
  
-## 📸 Screenshots
+# 📸 Screenshots
 
-### 🏠 Home Page
+# 🏠 Home Page
 ![Home Page](https://github.com/Sanjay-Rajamanickam/employee-management-system/blob/main/ems-fullstack/Screenshot/Home.png?raw=true)
 
-### ➕ Add Employee Page
+# ➕ Add Employee Page
 ![Add Employee Page](https://github.com/Sanjay-Rajamanickam/employee-management-system/blob/main/ems-fullstack/Screenshot/Add.png?raw=true)
 
-### ✏️ Update Employee Page
+# ✏️ Update Employee Page
 ![Update Employee Page](https://github.com/Sanjay-Rajamanickam/employee-management-system/blob/main/ems-fullstack/Screenshot/Update.png?raw=true)
 
 
@@ -27,26 +27,39 @@
 
  # Getting Started:
 
-=> Project Setup:
+# 1️⃣ Project Setup
+- Set up the **React JS** project for the frontend.
+- Set up the **Spring Boot** project for the backend.
 
-  1. Set up a React JS project for the front end and a Spring Boot project for the back end.
-     
-=>API Development:
+# 2️⃣ API Development
+- Create **Spring Boot REST APIs** for CRUD operations.
 
-  2. Develop Spring Boot REST APIs to handle employee data management operations (CRUD operations, leave management, payroll, etc.).
-     
-=>Front-End Development:
+# 3️⃣ Front-End Development
+- Build **React components** for forms, tables, and UI elements.
 
-  3. Build React components to display employee data, forms for adding/editing information, and visualizations (leave calendars, reports).
+# 4️⃣ API Integration
+- Connect React with Spring Boot APIs using **Axios** or **Fetch API**.
 
-=>API Integration:
+# 5️⃣ Data Management
+- Implement validation and error handling.
 
-  4. Integrate the Spring Boot back-end APIs into the React JS front-end using tools like Axios or Fetch API.
-     
-=>Data Management:
+# 6️⃣ Deployment
+- Deploy backend to a server (e.g., Tomcat).
+- Deploy frontend to a hosting service (e.g., Vercel, Netlify).
 
-  5. Implement data validation and error handling on both the front and back end to ensure data integrity.
-     
-=>Deployment:
 
-  6. Deploy the back-end application to a suitable server environment (e.g., Tomcat) and the front-end application to a web hosting platform.
+
+# 📂 Folder Structure
+ems-fullstack/
+│
+├── ems-backend/ # Spring Boot backend
+├── ems-fullstack/ # React frontend
+│ └── Screenshot/ # Project screenshots
+
+
+
+# 📌 Author
+# Sanjay Rajamanickam 
+📧 Contact: [pmraja75@gmail.com]  
+🔗 GitHub: [https://github.com/Sanjay-Rajamanickam](https://github.com/Sanjay-Rajamanickam)
+
