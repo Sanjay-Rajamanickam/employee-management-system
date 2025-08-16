@@ -1,7 +1,6 @@
-# Use OpenJDK 17 as base image
-FROM openjdk:17-jdk-alpine
+# Stage 1: Build
+FROM eclipse-temurin:17-alpine AS build
 
-# Set working directory
 WORKDIR /app
 
 # Copy Maven wrapper and pom.xml
@@ -12,14 +11,22 @@ COPY pom.xml .
 # Copy source code
 COPY src src
 
-# Give executable permission to mvnw
+# Give execute permission to mvnw
 RUN chmod +x mvnw
 
 # Build the app
 RUN ./mvnw clean package -DskipTests
 
-# Copy the jar to container
-COPY target/ems-backend-0.0.1-SNAPSHOT.jar app.jar
+# Stage 2: Run
+FROM eclipse-temurin:17-alpine
+
+WORKDIR /app
+
+# Copy the built jar from the first stage
+COPY --from=build /app/target/ems-backend-0.0.1-SNAPSHOT.jar app.jar
+
+# Expose port
+EXPOSE 8080
 
 # Run the jar
-ENTRYPOINT ["java","-jar","/app/app.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
