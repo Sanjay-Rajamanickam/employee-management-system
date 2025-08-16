@@ -25,7 +25,7 @@ WORKDIR /app
 # Copy the built jar from the first stage
 COPY --from=build /app/target/ems-backend-0.0.1-SNAPSHOT.jar app.jar
 
-# Expose port
+# Expose port (Railway will assign its own)
 EXPOSE 8080
 
 # Run the jar
